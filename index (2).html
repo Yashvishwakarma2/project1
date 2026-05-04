@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Template Code Hub</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background: linear-gradient(135deg, #0f172a 0%, #111827 45%, #0f172a 100%);
+    color:#fff;
+    overflow-x:hidden;
+}
+
+header{
+    text-align:center;
+    padding:24px 20px;
+    background:rgba(30,41,59,0.96);
+    font-size:26px;
+    font-weight:800;
+    letter-spacing:0.03em;
+    animation:slideDown 0.8s ease forwards;
+}
+
+/* SEARCH BAR */
+.search-box{
+    text-align:center;
+    padding:12px;
+}
+.search-box input{
+    padding:10px;
+    width:260px;
+    border-radius:8px;
+    border:none;
+    outline:none;
+}
+
+.container{
+    display:flex;
+    flex-wrap:wrap;
+    padding:24px 20px 40px;
+    gap:24px;
+    justify-content:center;
+}
+
+.card{
+    background:rgba(30,41,59,0.95);
+    width:300px;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 20px 40px rgba(0,0,0,0.25);
+    transform:translateY(20px);
+    opacity:0;
+    animation:fadeUp 0.9s ease forwards;
+}
+
+.card:nth-child(1){ animation-delay:0.15s; }
+.card:nth-child(2){ animation-delay:0.3s; }
+.card:nth-child(3){ animation-delay:0.45s; }
+.card:nth-child(4){ animation-delay:0.6s; }
+.card:nth-child(5){ animation-delay:0.75s; }
+.card:nth-child(6){ animation-delay:0.9s; }
+.card:nth-child(7){ animation-delay:1.05s; }
+.card:nth-child(8){ animation-delay:1.2s; }
+
+.preview{
+    background:#eff6ff;
+    color:#0f172a;
+    padding:20px;
+    height:130px;
+    overflow:hidden;
+}
+
+.code{
+    background:#020617;
+    padding:14px;
+    font-size:13px;
+    color:#d4d4dd;
+    max-height:150px;
+    overflow:auto;
+}
+
+button{
+    width:100%;
+    padding:14px;
+    border:none;
+    background:#38bdf8;
+    color:#020617;
+    font-weight:800;
+    cursor:pointer;
+}
+
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(28px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes slideDown{
+    from{opacity:0; transform:translateY(-18px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* PRODUCT CARD STYLE */
+.product-card{
+    width:100%;
+    border:3px solid #2f855a;
+    border-radius:12px;
+    padding:8px;
+    background:white;
+    text-align:left;
+}
+.product-card img{
+    width:100%;
+    height:60px;
+    object-fit:cover;
+    border-radius:8px;
+}
+.title{
+    font-size:14px;
+    font-weight:bold;
+    color:#1d4ed8;
+}
+.desc{
+    font-size:10px;
+    color:#555;
+}
+.price{
+    color:green;
+    font-size:12px;
+    font-weight:bold;
+}
+.btn{
+    margin-top:5px;
+    padding:5px;
+    background:#2563eb;
+    color:white;
+    border:none;
+    border-radius:6px;
+    font-size:10px;
+}
+</style>
+</head>
+
+<body>
+
+<header>CompifyUI</header>
+
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="🔍 Search templates...">
+</div>
+
+<div class="container">
+
+<!-- 1 (UPDATED PRODUCT CARD) -->
+<div class="card">
+<div class="preview">
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff">
+<div class="title">Shoes</div>
+<div class="desc">Stylish Shoes with fitness tracking</div>
+<div class="price">₹1999</div>
+<button class="btn">Buy</button>
+</div>
+</div>
+
+<div class="code" id="code1">
+&lt;div class="card"&gt;
+  &lt;img src="image.jpg"&gt;
+  &lt;h2&gt;Shoes&lt;/h2&gt;
+  &lt;p&gt;₹1999&lt;/p&gt;
+&lt;/div&gt;
+</div>
+
+<button onclick="copyCode('code1')">Copy Code</button>
+</div>
+
+<!-- rest same -->
+<div class="card">
+<div class="preview"><button style="padding:10px;background:black;color:white;">Click</button></div>
+<div class="code" id="code2">&lt;button&gt;Click&lt;/button&gt;</div>
+<button onclick="copyCode('code2')">Copy Code</button>
+</div>
+
+<div class="card">
+<div class="preview"><input type="text" placeholder="Enter name" style="padding:8px;width:100%;"></div>
+<div class="code" id="code3">&lt;input&gt;</div>
+<button onclick="copyCode('code3')">Copy Code</button>
+</div>
+
+<div class="card">
+<div class="preview"><div style="background:#38bdf8;padding:10px;">Box</div></div>
+<div class="code" id="code4">&lt;div&gt;Box&lt;/div&gt;</div>
+<button onclick="copyCode('code4')">Copy Code</button>
+</div>
+
+<div class="card">
+<div class="preview"><img src="https://via.placeholder.com/80" style="border-radius:50%;"></div>
+<div class="code" id="code5">&lt;img&gt;</div>
+<button onclick="copyCode('code5')">Copy Code</button>
+</div>
+
+<div class="card">
+<div class="preview"><progress value="70" max="100"></progress></div>
+<div class="code" id="code6">&lt;progress&gt;&lt;/progress&gt;</div>
+<button onclick="copyCode('code6')">Copy Code</button>
+</div>
+
+<div class="card">
+<div class="preview"><ul><li>Item 1</li><li>Item 2</li></ul></div>
+<div class="code" id="code7">&lt;ul&gt;&lt;/ul&gt;</div>
+<button onclick="copyCode('code7')">Copy Code</button>
+</div>
+
+<div class="card">
+<div class="preview"><a href="#">Visit</a></div>
+<div class="code" id="code8">&lt;a&gt;Visit&lt;/a&gt;</div>
+<button onclick="copyCode('code8')">Copy Code</button>
+</div>
+
+</div>
+
+<script>
+function copyCode(id){
+    let text = document.getElementById(id).innerText;
+    navigator.clipboard.writeText(text);
+    alert("Code Copied 🚀");
+}
+
+document.getElementById("searchInput").addEventListener("keyup", function() {
+    let value = this.value.toLowerCase();
+    let cards = document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+        let text = card.innerText.toLowerCase();
+        card.style.display = text.includes(value) ? "block" : "none";
+    });
+});
+</script>
+
+</body>
+</html>
